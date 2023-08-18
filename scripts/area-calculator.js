@@ -60,13 +60,51 @@ const area= width * length ;
     console.log(height);
     const area= base * height ;
     console.log(area);
+    setAreaText('parallelogramArea',area)
  }
 
-// reusable function
+ // Rhombus
+function calculaterhombusArea() {
+    const d1=inputField('rhombus-d1');
+    const d2=inputField('rhombus-d2');
+    const area= 0.5 * d1 * d2 ;
+    setAreaText('rhombusArea', area);
+}
+
+// Pentagon
+
+function calculatePentagonArea() {
+    const p=inputField('pentagon-p');
+    const b=inputField('pentagon-b');
+    const area= 0.5 * p * b;
+    setAreaText('pentagonArea', area);
+}
+
+//  ellipse
+
+function calculateEllipseArea() {
+    const majorRadius=inputField('major-radius');
+    const minorRadius=inputField('minor-radius');
+    const area= 3.14 * majorRadius * minorRadius ;
+    setAreaText('ellipseArea', area);
+}
+
+
+
+
+
+// reusable function for values
 
 function inputField(inputId) {
     const inputField=document.getElementById(inputId);
    const inputFieldText= inputField.value ;
    const input= parseFloat(inputFieldText);
    return input;
+}
+
+// reusable function for areaspan
+
+function setAreaText(inputId,area) {
+    const elementText=document.getElementById(inputId);
+     elementText.innerText=area;
 }
